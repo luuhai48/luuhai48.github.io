@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#555555">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <title>Note</title>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script>
+        let params = getQueryParams(window.location.search),
+            name = params.name;
+    </script>
+</head>
+
+<body>
+    <div class="container"></div>
+    <script>
+        let container = $(".container");
+
+        if (name) {
+            let html = `<form method="POST">
+                <div class="flex-center">
+                    <div>
+                        <h1 style="margin-bottom:10px">Note: <?php echo $name; ?></h1>
+                        <small>(Ctrl + S to Save)</small>
+                    </div>
+                    <button class="button ml-auto">Save</button>
+                </div>
+                <div contenteditable="true" spellcheck="false" id="editor"></div>
+                <input name="name" hidden value="${name}">
+                <input name="content" hidden>
+                <div class="flex-center">
+                    <a class="button is-gray" style="margin-top:20px" href="./">Back</a>
+                    <button class="button ml-auto" style="margin-top:20px">Save</button>
+                </div>
+            </form>`;
+            container.innerHTML = html;
+
+            let editor = $('div[contenteditable="true"]'),
+                contentInput = $('input[name="content"]'),
+                form = $('form');
+            
+            document.addEventListener("keydown", function(e) {
+                if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) && e.keyCode == 83) {
+                    e.preventDefault();
+                    document.querySelector("form").submit()
+                }
+            }, false);
+            editor.addEventListener("keydown", function(e) {
+                if (!e.shiftKey && e.keyCode == 9) {
+                    e.preventDefault()
+                    document.execCommand('insertHTML', false, '&nbsp;&nbsp;&nbsp;&nbsp;')
+                }
+            }, false);
+            editor.addEventListener("input", function(e) {
+                contentInput.value = e.target.innerHTML
+            }, false);
+            form.onsubmit = (e) => {
+                e.preventDefault();
+
+                fetch("https://api.toiyeucode.com/note", {
+                    method: "POST",
+                    body: new FormData(form),
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            return response.json()
+                        } else {
+                            window.location.href = "./";
+                        }
+                    })
+                    .then(() => {
+                        window.location.reload();
+                    })
+            }
+
+            fetch(`https://api.toiyeucode.com/note?name=${name}`)
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        window.location.href = "./";
+                    }
+                })
+                .then(data => {
+                    editor.innerHTML = data.content;
+                    contentInput.value = data.content;
+                })
+                .catch(error => {
+                    window.location.href = "./"
+                })
+        } else {
+            let html = `<form>
+                <h2>Enter Your Name:</h2>
+                <input type="text" name="name" class="input" placeholder="Name">
+                <button class="button ml-auto" style="margin-top:20px">Enter</button>
+            </form>`;
+            container.innerHTML = html;
+        }
+    </script>
+</body>
+
+</html>

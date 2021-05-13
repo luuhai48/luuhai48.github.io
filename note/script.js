@@ -1,0 +1,2 @@
+const $ = selector => document.querySelector(selector);
+        const getQueryParams = (e=>e?(/^[?#]/.test(e)?e.slice(1):e).split("&").reduce((e,t)=>{let[r,l]=t.split("=");return e[r]=l?decodeURIComponent(l.replace(/\+/g," ")):"",e},{}):{});
