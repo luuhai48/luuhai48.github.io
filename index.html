@@ -3,17 +3,103 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Hi!!!</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="index.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lưu Viết Hải - A coding guy</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+
+    <link rel="stylesheet" href="tailwind.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/default.min.css">
+
+    <meta name="description" content="A guy trying to learn how to code properly.">
+
+    <link
+        href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAPv/AAAAAAADwAAAD/AAABw4AAA73AAAN+wAAHfuAAB//gAAeZ4AAHmeAAA//AAAP/wAAB/4AAAP8AAAA8AAAAAAAAD8PwAA8A8AAOAHAADAAwAAgAEAAIABAAAAAAAAAAAAAAAAAAAAAAAAgAEAAIABAADAAwAA4AcAAPAPAAD8PwAA"
+        rel="icon" type="image/x-icon" />
+
+    <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        .font-title {
+            font-family: 'Karla', system-ui, -apple-system,
+                'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+        }
+
+        code {
+            font-family: MonoLisa, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::selection {
+            background-color: #c9f3fd;
+        }
+    </style>
 </head>
 
 <body>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/98/three.min.js'></script>
-    <script
-        src='https://cdn.jsdelivr.net/gh/mrdoob/three.js@2410ad1a8f5844df00191600eafda59def537830/examples/js/controls/OrbitControls.js'></script>
-    <script src="index.js"></script>
+    <nav class="absolute w-full px-6 py-4 flex justify-end text-xl font-medium text-brand-dark">
+        <a href="mailto:luuhai.hn48@gmail.com">Contact</a>
+    </nav>
+    <div class="m-auto md:w-[775px] flex flex-col items-center pt-16 pb-16 text-center px-8 text-brand-dark">
+        <img src="long-banner.png" alt="why are you here?">
+        <h2 class="text-2xl pt-6 font-title">Hi! My name is Hải, or you can call me Leo. <br>This is my personal site.
+            Hope you like it ʘ‿ʘ.
+        </h2>
+    </div>
+    <div class="m-auto px-4 md:px-0 md:w-[775px] text-brand-dark">
+        <div class="rounded-xl bg-white border-4 border-brand-dark relative md:text-xl">
+            <div class="overflow-x-auto md:overflow-hidden px-8 py-6 space-y-2 flex flex-col">
+                <pre><code class="python bg-unset text-sm">from datetime import datetime
+from dateutil import parser
+
+class Coder:
+    name = None
+    date_of_birth = 0
+    year_of_exp = None
+    languages = ()
+
+    @property
+    def age(self):
+        return datetime.now().year() - self.date_of_birth.year()
+
+me = Coder()
+me.name = "Lưu Viết Hải"
+me.date_of_birth = parser.parse("Aug 04 1997")
+me.year_of_exp = 3
+me.languages = ("Javascript", "PHP", "Python", "C#")
+
+print(me.age)
+</code></pre>
+            </div>
+
+            <div class="absolute inset-0 flex items-center" style="z-index: -1; margin: 0">
+                <div
+                    class="rounded-xl w-full h-full -mr-16 left-6 border-4 border-brand-dark transform scale-y-95 translate-x-4">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="bg-brand-dark text-white mt-8" style="background-image: url(repeat.svg); background-size: 297px">
+        <div class="m-auto px-8 md:w-[750px] flex flex-col items-center py-24 space-y-4">
+            <p class="text-2xl leading-relaxed font-title">
+                <span class="text-6xl">"</span>
+                Life always changes. So is your code.
+                <span class="text-6xl">"</span>
+            </p>
+        </div>
+    </div>
+
+    <script>hljs.initHighlightingOnLoad();</script>
 </body>
 
 </html>
