@@ -22,6 +22,9 @@
         let container = $(".container");
 
         if (name) {
+            // replace title
+            $("title").text(`Note | ${name}`);
+
             let html = `<form method="POST">
                 <div class="flex-center">
                     <div>
