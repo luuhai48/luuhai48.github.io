@@ -23,7 +23,7 @@
 
         if (name) {
             // replace title
-            $("title").text(`Note | ${name}`);
+            $("title").textContent = `Note | ${name}`;
 
             let html = `<form method="POST">
                 <div class="flex-center">
