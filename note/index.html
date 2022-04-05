@@ -6,8 +6,9 @@
     <meta name="theme-color" content="#555555">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-    <title>Note</title>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script> -->
+    <
+    
+    >Note</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <script>
@@ -65,7 +66,7 @@
             form.onsubmit = (e) => {
                 e.preventDefault();
 
-                fetch("https://api.toiyeucode.com/note", {
+                fetch("luuhai48-note.vercel.app", {
                     method: "POST",
                     body: new FormData(form),
                 })
@@ -81,7 +82,7 @@
                     })
             }
 
-            fetch(`https://api.toiyeucode.com/note?name=${name}`)
+            fetch(`luuhai48-note.vercel.app/note?name=${name}`)
                 .then(response => {
                     if (response.ok) {
                         return response.json();
