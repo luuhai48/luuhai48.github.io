@@ -6,9 +6,7 @@
     <meta name="theme-color" content="#555555">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-    <
-    
-    >Note</title>
+    <title>Note</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <script>
@@ -66,7 +64,7 @@
             form.onsubmit = (e) => {
                 e.preventDefault();
 
-                fetch("luuhai48-note.vercel.app", {
+                fetch("luuhai48-note.vercel.app/note", {
                     method: "POST",
                     body: new FormData(form),
                 })
