@@ -93,7 +93,8 @@
                     contentInput.value = data.content;
                 })
                 .catch(error => {
-                    window.location.href = "./"
+                    // window.location.href = "./"
+                    console.error(error);
                 })
         } else {
             let html = `<form>
