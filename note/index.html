@@ -64,7 +64,7 @@
             form.onsubmit = (e) => {
                 e.preventDefault();
 
-                fetch("luuhai48-note.vercel.app/note", {
+                fetch("https://luuhai48-note.vercel.app/note", {
                     method: "POST",
                     body: new FormData(form),
                 })
@@ -80,7 +80,7 @@
                     })
             }
 
-            fetch(`luuhai48-note.vercel.app/note?name=${name}`)
+            fetch(`https://luuhai48-note.vercel.app/note?name=${name}`)
                 .then(response => {
                     if (response.ok) {
                         return response.json();
