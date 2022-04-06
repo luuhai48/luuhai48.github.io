@@ -65,13 +65,12 @@
             form.onsubmit = (e) => {
                 e.preventDefault();
 
-                fetch("https://luuhai48-note.vercel.app/note", {
+                fetch(`https://luuhai48-note.vercel.app/note?name=${nameInput.value}`, {
                     method: "POST",
                     headers: {
                       'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        name: nameInput.value,
                         content: contentInput.value,
                     }),
                 })
