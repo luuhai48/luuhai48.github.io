@@ -44,6 +44,7 @@
 
             let editor = $('div[contenteditable="true"]'),
                 contentInput = $('input[name="content"]'),
+                nameInput = $('input[name="name"]'),
                 form = $('form');
             
             document.addEventListener("keydown", function(e) {
@@ -66,7 +67,13 @@
 
                 fetch("https://luuhai48-note.vercel.app/note", {
                     method: "POST",
-                    body: new FormData(form),
+                    headers: {
+                      'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: nameInput.value,
+                        content: contentInput.value,
+                    }),
                 })
                     .then(response => {
                         if (response.ok) {
