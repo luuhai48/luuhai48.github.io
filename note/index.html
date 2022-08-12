@@ -65,13 +65,14 @@
             form.onsubmit = (e) => {
                 e.preventDefault();
 
-                fetch(`https://luuhai48-note.vercel.app/note?name=${nameInput.value}`, {
+                fetch(`https://notes.hlab.workers.dev/note`, {
                     method: "POST",
                     headers: {
-                      'Content-Type': 'application/json'
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
                         content: contentInput.value,
+                        name: nameInput.value,
                     }),
                 })
                     .then(response => {
@@ -86,7 +87,7 @@
                     })
             }
 
-            fetch(`https://luuhai48-note.vercel.app/note?name=${name}`)
+            fetch(`https://notes.hlab.workers.dev/note?name=${name}`)
                 .then(response => {
                     if (response.ok) {
                         return response.json();
