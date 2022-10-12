@@ -65,7 +65,7 @@
             form.onsubmit = (e) => {
                 e.preventDefault();
 
-                fetch(`https://notes.hlab.workers.dev/note`, {
+                fetch(`https://luuhai48-note.deno.dev/note`, {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json'
@@ -87,7 +87,7 @@
                     })
             }
 
-            fetch(`https://notes.hlab.workers.dev/note?name=${name}`)
+            fetch(`https://luuhai48-note.deno.dev/note?name=${name}`)
                 .then(response => {
                     if (response.ok) {
                         return response.json();
