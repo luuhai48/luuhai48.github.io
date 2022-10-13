@@ -2,7 +2,7 @@
 title: "Hello World"
 date: 2022-10-13T21:45:46+07:00
 draft: false
-featured_image: ""
+featured_image: banner.png
 tags: ["hello", "world"]
 ---
 
