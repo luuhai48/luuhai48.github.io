@@ -1,0 +1,22 @@
+baseURL = 'https://luuhai48.github.io/'
+languageCode = 'en-us'
+title = 'Lưu Viết Hải - A Coding Guy'
+description = "I'm trying to make the code runs"
+
+[services.rss]
+  limit = 10
+
+[Author]
+  name = "luuhai48"
+  email = "luuhai.hn48@gmail.com"
+
+[permalinks]
+  posts = "/:year/:month/:day/:filename"
+  pages = "/:slug"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[outputs]
+  home = ["html", "json", "rss"]
