@@ -9,6 +9,15 @@
       <section class="articles">
         {{ range .Paginator.Pages }}
         <article class="article">
+          {{ if and (isset .Params "featured_image") (ne .Params.featured_image "") -}}
+          {{ $img := .Resources.GetMatch .Params.featured_image }}
+          {{ if $img -}}
+          <a href="{{ .Permalink }}">
+            <img src="{{ ($img.Fill "800x300 q100 Center").RelPermalink }}">
+          </a>
+          {{ end }}
+          {{ end }}
+
           <h2 class="article-title">
             <a href="{{ .Permalink }}" title="{{ .Title }}"> {{ .Title }} </a>
           </h2>
