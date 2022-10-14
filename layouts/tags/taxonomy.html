@@ -1,4 +1,7 @@
 {{ define "main" }}
+  {{ partial "header.html" . }}
+  {{ partial "breadcrumbs.html" . }}
+
   <section class="articles">
     {{ range .Paginator.Pages }}
     <article class="article">

@@ -14,6 +14,7 @@ hr {
 /* footer */
 footer {
   color: var(--white-2);
+  margin-top: 1rem;
 }
 footer a {
   color: var(--white-2);
@@ -75,6 +76,7 @@ footer a {
   font-size: 24px;
   opacity: 0;
   background-image: linear-gradient(298deg, #da2c4d, #f8ab37);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   left: 0;
@@ -102,4 +104,29 @@ footer a {
   box-sizing:border-box;
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
+}
+
+/* breadcrumbs */
+#breadcrumbs {
+  list-style: none;
+  display: flex;
+  position: relative;
+}
+#breadcrumbs > li {
+  position: relative;
+}
+#breadcrumbs > li:not(:first-child) {
+  margin-left: 30px;
+}
+#breadcrumbs > li:not(:first-child):before {
+  content: "»";
+  position: absolute;
+  left: -18px;
+}
+#breadcrumbs > li:last-child a {
+  pointer-events: none;
+  opacity: 0.4;
+}
+#breadcrumbs a {
+  color: var(--white-1);
 }

@@ -1,7 +1,13 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>{{ if eq .IsHome true }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+
+{{ if eq .IsHome true }}
+<title>{{ site.Title }}</title>
+{{ else }}
+<title>{{ .Title }} | {{ site.Title }}</title>
+{{ end }}
+
 {{ if .IsPage -}}
 <link rel="stylesheet" href="{{site.BaseURL}}assets/css/post.css" />
 <link rel="stylesheet" href="{{site.BaseURL}}assets/css/syntax.css" />
@@ -9,8 +15,10 @@
 {{ else }}
 <link rel="stylesheet" href="{{site.BaseURL}}assets/css/blog.css" />
 {{ end}}
+
 <link rel="stylesheet" href="{{site.BaseURL}}assets/css/common.css" />
 <script defer src="{{site.BaseURL}}assets/js/common.js"></script>
+
 {{ range .AlternativeOutputFormats -}}
   {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 {{ end -}}

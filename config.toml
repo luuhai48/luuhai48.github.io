@@ -13,7 +13,7 @@ disqusShortname = 'luuhai48'
   email = "luuhai.hn48@gmail.com"
 
 [permalinks]
-  posts = "/:year/:month/:day/:filename"
+  posts = "/posts/:filename"
   pages = "/:slug"
 
 [taxonomies]
