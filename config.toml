@@ -29,3 +29,4 @@ disqusShortname = 'luuhai48'
 
 [markup.highlight]
   noClasses = false
+  linenos = true

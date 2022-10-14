@@ -138,18 +138,18 @@ main {
   margin-left: 1rem;
   margin-bottom: 0;
 }
-.content table {
+.content table:not(.lntable) {
   width: 100%;
   max-width: 100%;
   margin: 1rem 0;
   border-collapse: collapse;
 }
-.content table th {
+.content table:not(.lntable) th {
   background-color: var(--gray-3);
   color: var(--white-2);
   border: 1px solid var(--gray-5);
 }
-.content table * {
+.content table:not(.lntable) * {
   border: 1px solid var(--gray-3);
   padding: 0.2rem;
 }
@@ -159,18 +159,16 @@ main {
 }
 
 /* pre , code */
-.content pre{
+.content .chroma{
   overflow-x: auto !important;
 }
 
 .content pre {
   background: var(--gray-3) !important;
-  padding: 1rem 2rem;
-  margin-bottom: 1.75rem;
+  padding: 1rem;
 }
 
 .content code {
-  padding: 3px 5px;
   color: var(--white-2);
   white-space: pre;
   background-color: var(--gray-3);
