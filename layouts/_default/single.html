@@ -1,27 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-  {{ partial "head.html" . }}
-  <body>
-    <main>
-      {{ partial "header.html" . }}
-      <section class="article">
-        <div class="article-header">
-          <h2 class="article-title">{{ .Title }}</h2>
-          <small class="date">{{ .Date.Format "Mon Jan 2, 2006" }}</small>
-          <div class="tags">
-            {{ range $.Params.tags }}
-            <a href="{{site.BaseURL}}tags/{{ . }}" class="tag">{{ . }}</a>
-            {{ end }}
-          </div>
-        </div>
-        <div class="content">{{ .Content }}</div>
-      </section>
+{{ define "main" }}
+  <section class="article">
+    <div class="article-header">
+      <h2 class="article-title">{{ .Title }}</h2>
+      <small class="date">{{ .Date.Format "Mon Jan 2, 2006" }}</small>
+      <div class="tags">
+        {{ range $.Params.tags }}
+        <a href="{{site.BaseURL}}tags/{{ . }}" class="tag">{{ . }}</a>
+        {{ end }}
+      </div>
+    </div>
+    <div class="content">{{ .Content }}</div>
+  </section>
 
-      <section class="comments">
-        {{ partial "disqus.html" . }}
-      </section>
+  <section class="comments">
+    {{ partial "disqus.html" . }}
+  </section>
 
-      {{ partial "footer.html" . }}
-    </main>
-  </body>
-</html>
+  {{ partial "footer.html" . }}
+  </main>
+{{ end }}
+{{ define "js-extra" }}
+  {{ if (findRE "class=\"highlight\"" .Content 1) }}
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard-polyfill/2.7.0/clipboard-polyfill.promise.js" integrity="sha256-waClS2re9NUbXRsryKoof+F9qc1gjjIhc2eT7ZbIv94=" crossorigin="anonymous"></script>
+      <script defer src="{{site.BaseURL}}assets/js/copy-code-button.js"></script>
+  {{ end  }}
+{{ end  }}

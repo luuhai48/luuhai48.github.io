@@ -1,40 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-  {{ partial "head.html" . }}
-  <body>
-    <main>
-      {{ partial "header.html" . }}
-      <!-- {{ partial "bio.html" . }} -->
-      <h2>Tag: {{.Title}}</h2>
-      <section class="articles">
-        {{ range .Paginator.Pages }}
-        <article class="article">
-          {{ if and (isset .Params "featured_image") (ne .Params.featured_image "") -}}
-          {{ $img := .Resources.GetMatch .Params.featured_image }}
-          {{ if $img -}}
-          <a href="{{ .Permalink }}">
-            <img src="{{ ($img.Fill "800x300 q100 Center").RelPermalink }}">
-          </a>
-          {{ end }}
-          {{ end }}
+{{ define "main" }}
+  <section class="articles">
+    {{ range .Paginator.Pages }}
+    <article class="article">
+      {{ if and (isset .Params "featured_image") (ne .Params.featured_image "") -}}
+      {{ $img := .Resources.GetMatch .Params.featured_image }}
+      {{ if $img -}}
+      <a href="{{ .Permalink }}">
+        <img src="{{ ($img.Fill "800x300 q100 Center").RelPermalink }}">
+      </a>
+      {{ end }}
+      {{ end }}
 
-          <h2 class="article-title">
-            <a href="{{ .Permalink }}" title="{{ .Title }}"> {{ .Title }} </a>
-          </h2>
-          <small class="date">{{ .Date.Format "Mon Jan 2, 2006" }}</small>
-          <div class="tags">
-            {{ range .Params.Tags }}
-            <a href="{{site.BaseURL}}tags/{{ . }}" class="tag">{{ . }}</a>
-            {{ end }}
-          </div>
-        </article>
+      <h2 class="article-title">
+        <a href="{{ .Permalink }}" title="{{ .Title }}"> {{ .Title }} </a>
+      </h2>
+      <small class="date">{{ .Date.Format "Mon Jan 2, 2006" }}</small>
+      <div class="tags">
+        {{ range .Params.Tags }}
+        <a href="{{site.BaseURL}}tags/{{ . }}" class="tag">{{ . }}</a>
         {{ end }}
-      </section>
+      </div>
+    </article>
+    {{ end }}
+  </section>
 
-      <section>
-        {{ template "_internal/pagination.html" . }}
-      </section>
-      {{ partial "footer.html" . }}
-    </main>
-  </body>
-</html>
+  <section>
+    {{ template "_internal/pagination.html" . }}
+  </section>
+{{ end }}
