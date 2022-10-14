@@ -116,7 +116,6 @@ main {
   justify-content: flex-start;
 }
 .articles .article .tags .tag {
-  margin: 0 0.5rem 0.3rem 0;
   display: block;
   color: var(--gray-4);
   background: var(--white-2);
@@ -126,6 +125,9 @@ main {
   line-height: 1.3rem;
   cursor: pointer;
   transition: background 0.3s;
+}
+.articles .article .tags .tag:not(:first-child) {
+  margin-left: 0.5rem;
 }
 .articles .article .tags .tag:hover {
   background: var(--white-1);
@@ -165,10 +167,13 @@ ul.pagination li.page-item:not(.active):hover a {
 
 @media screen and (max-width: 750px) {
   body {
-    padding: 1.5rem;
+    padding: 0.5rem;
   }
   header .site-title {
     font-size: 2.5rem;
+  }
+  .articles article.article {
+    padding: 1rem;
   }
 }
 
