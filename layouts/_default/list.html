@@ -29,6 +29,10 @@
         </article>
         {{ end }}
       </section>
+
+      <section>
+        {{ template "_internal/pagination.html" . }}
+      </section>
       {{ partial "footer.html" . }}
     </main>
   </body>
