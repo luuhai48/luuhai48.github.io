@@ -20,3 +20,6 @@ description = "I'm trying to make the code runs"
 
 [outputs]
   home = ["html", "json", "rss"]
+
+[markup.highlight]
+  noClasses = false
