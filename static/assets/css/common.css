@@ -59,6 +59,7 @@ main {
 
 .d-flex {
   display: flex;
+  align-items: center;
 }
 
 .break {
@@ -257,5 +258,11 @@ button:focus {
 @media screen and (max-width: 750px) {
   main {
     padding: 1rem 0 6rem;
+  }
+  .d-flex {
+    flex-direction: column;
+  }
+  #search {
+    margin-top: 0.5rem;
   }
 }
