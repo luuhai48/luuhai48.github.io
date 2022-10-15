@@ -1,14 +1,19 @@
 {{ define "main" }}
   <div class="d-flex mb-2">
+    {{ partial "breadcrumbs.html" . }}
     <div class="break"></div>
     {{ partial "search-form.html" . }}
   </div>
-
-  {{ partial "header.html" . }}
-  {{ partial "bio.html" . }}
+  <header>
+    {{ if (eq .Title "Categories") -}}
+    <a class="site-title">All Categories</a>
+    {{- else -}}
+    <a class="site-title">Category: {{ .Title }}</a>
+    {{- end }}
+  </header>
 
   <section class="articles">
-    {{ range (.Paginate ( where site.RegularPages "Section" "posts" ).ByDate.Reverse).Pages }}
+    {{ range .Paginator.Pages }}
     <article class="article">
       {{ if and (isset .Params "featured_image") (ne .Params.featured_image "") -}}
       {{ $img := .Resources.GetMatch .Params.featured_image -}}
@@ -20,7 +25,7 @@
       {{- end }}
 
       <h2 class="article-title">
-        <a href="{{ .Permalink }}"> {{ .Title }} </a>
+        <a href="{{ .Permalink }}" title="{{ .Title }}"> {{ .Title }} </a>
       </h2>
       <small class="date">{{ .Date.Format "Mon Jan 2, 2006" }}</small>
       <div class="tags mt-1">

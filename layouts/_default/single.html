@@ -1,13 +1,17 @@
 {{ define "main" }}
-  {{ partial "breadcrumbs.html" . }}
+  <div class="d-flex mb-2">
+    {{ partial "breadcrumbs.html" . }}
+    <div class="break"></div>
+    {{ partial "search-form.html" . }}
+  </div>
 
   <section class="article">
     <div class="article-header">
       <h2 class="article-title">{{ .Title }}</h2>
       <small class="date">{{ .Date.Format "Mon Jan 2, 2006" }}</small>
-      <div class="tags">
+      <div class="tags mt-1">
         {{ range $.Params.tags }}
-        <a href="{{site.BaseURL}}tags/{{ . }}" class="tag">{{ . }}</a>
+        <a href="{{site.BaseURL}}/tags/{{ . }}" class="tag">{{ . }}</a>
         {{ end }}
       </div>
     </div>
@@ -21,7 +25,7 @@
 {{ end }}
 {{ define "js-extra" }}
   {{ if (findRE "class=\"highlight\"" .Content 1) }}
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard-polyfill/2.7.0/clipboard-polyfill.promise.js" integrity="sha256-waClS2re9NUbXRsryKoof+F9qc1gjjIhc2eT7ZbIv94=" crossorigin="anonymous"></script>
-      <script defer src="{{site.BaseURL}}assets/js/copy-code-button.js"></script>
+    <script src="{{site.BaseURL}}/assets/js/clipboard-polyfill.promise.js"></script>
+    <script defer src="{{site.BaseURL}}/assets/js/copy-code-button.js"></script>
   {{ end  }}
 {{ end  }}

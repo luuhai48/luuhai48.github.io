@@ -1,83 +1,42 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,300;0,400;0,800;1,100;1,300;1,400;1,800&display=swap");
-
-:root {
-  --gray-1: #3f3f3f;
-  --gray-2: #32353a;
-  --gray-3: #25282c;
-  --gray-4: #151618;
-  --gray-5: #151618;
-  --gray-6: #111111;
-  --white-1: #eeeeee;
-  --white-2: #a9abb3;
-}
-* {
-  font-family: inherit;
-  text-decoration: none;
-  margin: 0;
-  padding: 0;
-  -webkit-user-drag: none;
-  -moz-window-dragging: none;
-  -webkit-tap-highlight-color: transparent;
-}
-* img {
-  max-width: 100%;
-}
-html,
-body {
-  color: var(--white-2);
-  background-color: var(--gray-6);
-  font-family: "JetBrains Mono", monospace;
-  line-height: 2rem;
-  background-color: var(--gray-5);
-}
-header {
-  padding: 1rem 0 1rem 0;
-}
-.site-title {
-  font-size: 1.4rem;
-  font-weight: bolder;
-  line-height: 110%;
-  color: var(--white-1);
-}
-main {
-  margin: 0 auto;
-  max-width: 780px;
-  padding: 3rem 0 4rem 0;
-}
-
 .article {
   margin-bottom: 3rem;
 }
 
 .article-header {
   margin-bottom: 4rem;
+  text-align: center;
 }
 .article-title {
-  font-size: 2.4rem;
-  margin-bottom: 0.6rem;
+  font-size: 4rem;
   line-height: 140%;
 }
 
 .article .date {
   display: block;
-  font-size: 0.8rem;
+  font-size: 1.5rem;
 }
 .tags {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
 }
 .tags .tag {
-  margin: 0 0.5rem 0 0;
   display: block;
   color: var(--gray-4);
   background: var(--white-2);
   border-radius: 15px;
-  font-size: 0.7rem;
-  padding: 0 0.8rem;
-  line-height: 1.3rem;
+  font-size: 1.3rem;
+  padding: 0.5rem 1rem;
+  line-height: 1.2rem;
   cursor: pointer;
+  transition: all 0.3s; 
+}
+.tags .tag:not(:first-child) {
+  margin-left: 0.5rem;
+}
+.tags .tag:hover {
+  background: var(--white-1);
 }
 
 /* markdown content */
@@ -210,39 +169,15 @@ main {
   position: relative;
 }
 .copy-code-button {
-  color: #272822;
-  background-color: #FFF;
-  border-color: #272822;
-  border: 2px solid;
-  border-radius: 3px;
-
   /* right-align */
   display: block;
   margin-left: auto;
   margin-right: 0;
 
   margin-bottom: -10px;
-  padding: 3px 8px;
-  font-size: 0.8em;
   position: absolute;
   top: 0;
   right: 0;
-}
-
-.copy-code-button:hover {
-  cursor: pointer;
-  background-color: #F2F2F2;
-}
-
-.copy-code-button:focus {
-  /* avoid an ugly focus outline on click in Chrome, but darken the button
-     for accessibility. https://stackoverflow.com/a/25298082/1481479 */
-  background-color: #E6E6E6;
-  outline: 0;
-}
-
-.copy-code-button:active {
-  background-color: #D9D9D9;
 }
 
 @media screen and (max-width: 750px) {

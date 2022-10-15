@@ -1,26 +1,36 @@
 {{ define "main" }}
-  {{ partial "header.html" . }}
-  {{ partial "breadcrumbs.html" . }}
+  <div class="d-flex mb-2">
+    {{ partial "breadcrumbs.html" . }}
+    <div class="break"></div>
+    {{ partial "search-form.html" . }}
+  </div>
+  <header>
+    {{ if (eq .Title "Tags") }}
+    <a class="site-title">All Tags</a>
+    {{ else }}
+    <a class="site-title">Tag: {{ .Title }}</a>
+    {{ end }}
+  </header>
 
   <section class="articles">
     {{ range .Paginator.Pages }}
     <article class="article">
       {{ if and (isset .Params "featured_image") (ne .Params.featured_image "") -}}
-      {{ $img := .Resources.GetMatch .Params.featured_image }}
+      {{ $img := .Resources.GetMatch .Params.featured_image -}}
       {{ if $img -}}
       <a href="{{ .Permalink }}">
         <img src="{{ ($img.Fill "800x300 q100 Center").RelPermalink }}">
       </a>
-      {{ end }}
-      {{ end }}
+      {{- end }}
+      {{- end }}
 
       <h2 class="article-title">
         <a href="{{ .Permalink }}" title="{{ .Title }}"> {{ .Title }} </a>
       </h2>
       <small class="date">{{ .Date.Format "Mon Jan 2, 2006" }}</small>
-      <div class="tags">
+      <div class="tags mt-1">
         {{ range .Params.Tags }}
-        <a href="{{site.BaseURL}}tags/{{ . }}" class="tag">{{ . }}</a>
+        <a href="{{site.BaseURL}}/tags/{{ . }}" class="tag">{{ . }}</a>
         {{ end }}
       </div>
     </article>

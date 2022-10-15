@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-    {{ `<!--
-                 Z
-                z
-               z
-         /\_/\
-     ("\( -_- )/")
-       ((     ))
-      (...)-(...)
-    -->` | safeHTML }}
+  {{ `<!-- 
 
-    <head>
-        {{ partial "head.html" . }}
 
-        {{ block "head-extra" . }}{{ end }}
-    </head>
-    <body>
-        <main>
-            {{ block "main" . }}{{ end }}
-            {{ partial "footer.html" . }}
-        </main>
 
-        {{ block "js-extra" . }}{{ end }}
-    </body>
+
+
+
+
+      What are you looking for in here?
+
+
+
+
+
+
+
+-->` | safeHTML }}
+
+  <head>
+    {{ partial "head.html" . }}
+
+    {{ block "head-extra" . }}{{ end }}
+  </head>
+  <body>
+    <main>
+      {{ block "main" . }}{{ end }}
+      {{ partial "footer.html" . }}
+    </main>
+
+    {{ block "js-extra" . }}{{ end }}
+  </body>
 </html>

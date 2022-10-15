@@ -9,15 +9,15 @@
 {{ end }}
 
 {{ if .IsPage -}}
-<link rel="stylesheet" href="{{site.BaseURL}}assets/css/post.css" />
-<link rel="stylesheet" href="{{site.BaseURL}}assets/css/syntax.css" />
-<script defer src="{{site.BaseURL}}assets/js/lbox.js"></script>
+<link rel="stylesheet" href="{{site.BaseURL}}/assets/css/post.css" />
+<link rel="stylesheet" href="{{site.BaseURL}}/assets/css/syntax.css" />
+<script defer src="{{site.BaseURL}}/assets/js/lbox.js"></script>
 {{ else }}
-<link rel="stylesheet" href="{{site.BaseURL}}assets/css/blog.css" />
+<link rel="stylesheet" href="{{site.BaseURL}}/assets/css/blog.css" />
 {{ end}}
 
-<link rel="stylesheet" href="{{site.BaseURL}}assets/css/common.css" />
-<script defer src="{{site.BaseURL}}assets/js/common.js"></script>
+<link rel="stylesheet" href="{{site.BaseURL}}/assets/css/common.css" />
+<script defer src="{{site.BaseURL}}/assets/js/common.js"></script>
 
 {{ range .AlternativeOutputFormats -}}
   {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
