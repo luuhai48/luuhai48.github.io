@@ -1,4 +1,4 @@
-/** Scroll to top */
+/* Scroll to top */
 const scrollOffset = 40;
 const duration = 500;
 
@@ -18,7 +18,7 @@ const updateProgress = () => {
     b = document.body,
     st = "scrollTop",
     sh = "scrollHeight";
-  const progress = pathLength - pathLength * (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight);
+  const progress = pathLength - pathLength * Math.min(Math.max((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight), 0), 1);
   progressPath.style.strokeDashoffset = progress;
 };
 
@@ -37,3 +37,5 @@ scrollTopButton.onclick = () => {
 };
 
 window.onscroll = onScroll;
+
+/* Search */
