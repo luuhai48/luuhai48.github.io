@@ -2,8 +2,12 @@
 
 # ============================= HOW TO USE? ===================================
 #
-# curl -Lso- https://luuhai48.github.io/starter.sh | bash
+# bash -c "$(curl https://luuhai48.github.io/starter.sh)"
 #
+# OR
+#
+# bash -c "$(wget -O- https://luuhai48.github.io/starter.sh)"
+# 
 # Note: Ubuntu only
 # =============================================================================
 
