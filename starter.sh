@@ -7,8 +7,7 @@
 # OR
 #
 # bash -c "$(wget -O- https://luuhai48.github.io/starter.sh)"
-# 
-# Note: Ubuntu only
+#
 # =============================================================================
 
 if [[ ! "$OSTYPE" == "linux-gnu"* ]]; then
@@ -149,13 +148,24 @@ if [ "$INSTALL_OHMYZSH" = true ]; then
     OHMYZSH_THEME="${theme_options[$theme_choice]}"
 fi
 
-# Start installing ============================================================
-sudo apt update
+# NeoVim ======================================================================
+echo "Do you want to install NeoVim?"
 
-if [ ! -x /usr/bin/curl ]; then
-    echo "Installing curl ..."
-    sudo apt install -y curl
+neovim_options=("Yes" "no")
+select_option "${neovim_options[@]}"
+neovim_choice=$?
+
+INSTALL_NEOVIM=true
+if [ "$neovim_choice" = 1 ]; then
+    INSTALL_NEOVIM=false
 fi
+
+# Start installing ============================================================
+if [ "$INSTALL_NEOVIM" = true ]; then
+    sudo add-apt-repository ppa:neovim-ppa/unstable -y
+fi
+sudo apt update
+sudo apt install -y git curl zip unzip
 
 if [ "$INSTALL_DOCKER" = true ]; then
     echo "Installing Docker ..."
@@ -193,6 +203,12 @@ antigen theme $OHMYZSH_THEME
 # Tell Antigen that you're done.
 antigen apply
 EOT
+fi
+
+if [ "$INSTALL_NEOVIM" = true ]; then
+    sudo apt install neovim -y
+    mkdir -p ~/.config
+    git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth=1
 fi
 
 echo "DONE!"
