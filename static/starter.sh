@@ -149,21 +149,21 @@ if [ "$INSTALL_OHMYZSH" = true ]; then
 fi
 
 # NeoVim ======================================================================
-echo "Do you want to install NeoVim?"
-
-neovim_options=("Yes" "no")
-select_option "${neovim_options[@]}"
-neovim_choice=$?
-
-INSTALL_NEOVIM=true
-if [ "$neovim_choice" = 1 ]; then
-    INSTALL_NEOVIM=false
-fi
+# echo "Do you want to install NeoVim?"
+#
+# neovim_options=("Yes" "no")
+# select_option "${neovim_options[@]}"
+# neovim_choice=$?
+#
+# INSTALL_NEOVIM=true
+# if [ "$neovim_choice" = 1 ]; then
+#     INSTALL_NEOVIM=false
+# fi
 
 # Start installing ============================================================
-if [ "$INSTALL_NEOVIM" = true ]; then
-    sudo add-apt-repository ppa:neovim-ppa/unstable -y
-fi
+# if [ "$INSTALL_NEOVIM" = true ]; then
+#     sudo add-apt-repository ppa:neovim-ppa/unstable -y
+# fi
 sudo apt update
 sudo apt install -y git curl zip unzip
 
@@ -205,11 +205,11 @@ antigen apply
 EOT
 fi
 
-if [ "$INSTALL_NEOVIM" = true ]; then
-    sudo apt install neovim -y
-    mkdir -p ~/.config
-    git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth=1
-fi
+# if [ "$INSTALL_NEOVIM" = true ]; then
+#     sudo apt install neovim -y
+#     mkdir -p ~/.config
+#     git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth=1
+# fi
 
 echo "DONE!"
 if [ "$INSTALL_OHMYZSH" = true ]; then
