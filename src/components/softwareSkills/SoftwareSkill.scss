@@ -13,6 +13,11 @@
   display: inline-block;
   margin-right: 20px;
   margin-bottom: 20px;
+
+  & > img {
+    width: 48px;
+    height: 48px;
+  }
 }
 
 .software-skill-inline > i {
@@ -24,7 +29,7 @@
 }
 .software-skill-inline > p {
   color: $subTitle;
-  font-size: 10px;
+  font-size: 12px;
 }
 .software-skill-inline > i:hover ~ p {
   color: $skillsColor;

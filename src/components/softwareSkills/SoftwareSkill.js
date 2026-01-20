@@ -1,6 +1,6 @@
 import React from "react";
 import "./SoftwareSkill.scss";
-import {skillsSection} from "../../portfolio";
+import { skillsSection } from "../../portfolio";
 
 export default function SoftwareSkill() {
   return (
@@ -14,7 +14,12 @@ export default function SoftwareSkill() {
                 className="software-skill-inline"
                 name={skills.skillName}
               >
-                <i className={skills.fontAwesomeClassname}></i>
+                {skills.fontAwesomeClassname && (<i className={skills.fontAwesomeClassname}></i>)}
+                {skills.icon && (<img src={skills.icon} alt={skills.skillName} style={{
+                  filter: "grayscale(100%)",
+                  opacity: 0.8,
+                  ...skills.customStyle
+                }} />)}
                 <p>{skills.skillName}</p>
               </li>
             );
