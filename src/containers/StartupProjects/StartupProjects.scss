@@ -1,9 +1,10 @@
 @import "../../_globalColor";
 
-.card-image {
+.big-project-card-image {
   max-width: 100%;
-  height: auto;
-  width: 250px;
+  width: auto;
+  height: 150px;
+  object-fit: contain;
 }
 .card-title {
   color: $titleColor;
@@ -24,7 +25,7 @@
   padding: 1.5rem;
   border-radius: 10px;
   border: 1px solid $lightBorder1;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .project-card-light {
   box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;

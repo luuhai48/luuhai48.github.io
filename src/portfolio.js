@@ -245,30 +245,36 @@ const bigProjects = {
   subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
   projects: [
     {
-      image: require("./assets/images/saayaHealthLogo.webp"),
-      projectName: "Saayahealth",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      footerLink: [
-        {
-          name: "Visit Website",
-          url: "http://saayahealth.com/"
-        }
-        //  you can add extra buttons here.
-      ]
+      image: require("./assets/images/mec-logo.png"),
+      projectName: "MEC Intranet System",
+      projectDesc: "MEC Intranet System is a system that allows the company to manage their resources and projects.",
+      footerLink: []
     },
     {
-      image: require("./assets/images/nextuLogo.webp"),
-      projectName: "Nextu",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      footerLink: [
-        {
-          name: "Visit Website",
-          url: "http://nextu.se/"
-        }
-      ]
+      image: require("./assets/images/live-chat.png"),
+      projectName: "Breadstack Live Chat",
+      projectDesc: "A system that allow our B2B customers to chat support with their customers on their website. It also comes with many unique features like Customer management, Order management, Coupon sending, Visitor realtime tracking, Ticket System, Email Marketing, etc.",
+      footerLink: [{
+        name: "Visit Website",
+        url: "https://breadstack.com/live-chat"
+      }]
+    },
+    {
+      image: require("./assets/images/pvpipe-logo.png"),
+      projectName: "PVPIPE ERP System",
+      projectDesc: "ERP system for PvPipe company in Vietnam. The features are: employee management, project management, production pipeline management, etc.",
+    },
+    {
+      image: require("./assets/images/gasaga-logo.jpg"),
+      projectName: "Novel Reading Website",
+      projectDesc: "A website that allows users to read novels online. The features are: novel and chapter posting, read statistics, like and comment, admin dashboard, IP spam blocking, realtime notification, etc.",
+      footerLink: [{
+        name: "Visit Website",
+        url: "https://gasaga.net"
+      }]
     }
   ],
-  display: false // Set false to hide this section, defaults to true
+  display: true // Set false to hide this section, defaults to true
 };
 
 // Achievement Section
@@ -338,7 +344,7 @@ const blogSection = {
   title: "Blogs",
   subtitle:
     "With Love for Developing cool stuff, I love to write and teach others what I have learnt.",
-  displayMediumBlogs: "true", // Set true to display fetched medium blogs instead of hardcoded ones
+  displayMediumBlogs: "false", // Set true to display fetched medium blogs instead of hardcoded ones
   blogs: [
     {
       url: "https://blog.usejournal.com/create-a-google-assistant-action-and-win-a-google-t-shirt-and-cloud-credits-4a8d86d76eae",
