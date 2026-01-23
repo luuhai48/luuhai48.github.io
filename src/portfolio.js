@@ -26,7 +26,7 @@ const greeting = {
     "A passionate Full Stack Software Developer 🚀 having an experience of building Web applications with Typescript / JavaScript / Reactjs / Nodejs / Python and some other cool libraries and frameworks."
   ),
   resumeLink:
-    "", // Set to empty to hide the button
+    "true", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 

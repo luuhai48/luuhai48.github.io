@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lưu Viết Hải - Senior Backend Developer</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    .skill-bar {
+      height: 8px;
+      background-color: #e5e7eb;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .skill-progress {
+      height: 100%;
+      background-color: #1f2937;
+      transition: width 0.3s ease;
+    }
+
+    .export-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #1f2937;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      z-index: 1000;
+    }
+
+    .export-btn:hover {
+      background-color: #374151;
+      transform: translateY(-2px);
+    }
+
+    @media print {
+      .export-btn {
+        display: none;
+      }
+
+      @page {
+        margin: 10px;
+        size: auto;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .max-w-4xl {
+        max-width: 100%;
+        margin: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100">
+  <button class="export-btn" onclick="exportToPDF()">Export to PDF</button>
+  <div class="max-w-4xl mx-auto bg-white shadow-lg" id="content">
+    <!-- Header Section -->
+    <header class="bg-gray-800 text-white text-center py-8 px-6">
+      <div class="mb-4">
+        <img src="./avatar.jpg" alt="Lưu Viết Hải"
+          class="w-24 h-24 rounded-full mx-auto object-cover border-4 border-white">
+      </div>
+      <h1 class="text-3xl font-bold mb-2">Lưu Viết Hải</h1>
+      <p class="text-sm uppercase tracking-wide mb-6">Senior Backend Developer</p>
+      <div class="flex justify-center items-center gap-8 text-sm">
+        <div class="flex items-center gap-2">
+          <span>✉</span>
+          <span>luuhai.hn48@gmail.com</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span>📞</span>
+          <span>+84 90 327 3285</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="p-8">
+      <!-- Websites and Social Links -->
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-3 border-b-2 border-gray-800 pb-2">Websites and Social Links</h2>
+        <p class="text-gray-700">Website cá nhân: <a href="https://luuhai48.github.io"
+            class="text-blue-600 hover:underline">luuhai48.github.io</a></p>
+        <p class="text-gray-700">LinkedIn: <a href="https://www.linkedin.com/in/luuviethai/"
+            class="text-blue-600 hover:underline">linkedin.com/in/luuviethai</a></p>
+      </section>
+
+      <!-- Summary -->
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-3 border-b-2 border-gray-800 pb-2">Summary</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Backend Engineer với hơn 6 năm kinh nghiệm xây dựng và mở rộng hệ thống backend phục vụ hàng nghìn người
+          dùng. Tôi vừa hoàn thành vai trò Technical Lead tại Breadstack, nơi tôi dẫn dắt team phát triển nền tảng Live
+          Chat với nhiều tính năng đặc biệt cho platform. Tôi có kinh nghiệm làm việc với Node.js và Python với khả năng
+          thiết kế
+          cơ sở dữ liệu phức tạp (PostgreSQL, MongoDB) và triển khai hệ thống microservices. Tôi đã đóng góp vào việc
+          phát triển nhiều ứng dụng như email các giải pháp có khả năng mở rộng cao. Trong thời gian rảnh, tôi không
+          ngừng mở rộng mở rộng quan điểm của mình qua các bài đọc và nhìn vào học các công nghệ mới như Golang, Java và
+          các
+          JavaScript Framework hiện đại.
+        </p>
+      </section>
+
+      <!-- Experience -->
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-3 border-b-2 border-gray-800 pb-2">Experience</h2>
+
+        <!-- Job 1 -->
+        <div class="mb-6">
+          <h3 class="text-lg font-bold">Technical Lead, Breadstack Technologies Inc, Hà Nội</h3>
+          <p class="text-sm text-gray-600 mb-2">Jun 2024 — Jan 2026</p>
+          <p class="text-gray-700 mb-2">Dẫn dắt định hướng kỹ thuật và các quyết định kiến trúc cho việc phát triển nền
+            tảng Live Chat.</p>
+          <ul class="list-disc ml-6 space-y-1 text-gray-700">
+            <li>Quản lý đội ngũ 5 developers, thiết lập quy trình code review và các tiêu chuẩn kỹ thuật.</li>
+            <li>Phát triển các tính năng mới: Visitor Tracking, Ticket System, Email Marketing, Real Time
+              Notification...</li>
+            <li>Kiến trúc backend dữa trên microservices sử dụng Node.js, cải thiện khả năng mở rộng của hệ thống.</li>
+            <li>Thiết kế và tối ưu hóa database schema trên MongoDB, đảm bảo không bị tác nghẽn khi có nhiều lượng tác
+              tin nhân kế cả vào giao diện.</li>
+            <li>Hướng dẫn các developer junior thông qua pair programming và training và chia sẻ kiến thức kỹ thuật.
+            </li>
+            <li>Tư vấn support cho App Delivery giúp tối ưu hóa api phí, tăng tốc độ API và xử lý các critical
+              production bug.</li>
+            <li><strong>Công nghệ chính:</strong> Node.js, Python, PostgreSQL, MongoDB, Redis, Docker, Kubernetes,
+              Google Cloud, React.js.</li>
+          </ul>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="mb-6">
+          <h3 class="text-lg font-bold">Software Engineer, Breadstack Technologies Inc, Hà Nội</h3>
+          <p class="text-sm text-gray-600 mb-2">Jun 2020 — Jun 2024</p>
+          <ul class="list-disc ml-6 space-y-1 text-gray-700">
+            <li>Phát triển và bảo trì các backend API phục vụ hàng ngàn người dùng đồng thời với 99.9% uptime.</li>
+            <li>Xây dựng các tính năng real-time sử dụng WebSocket và queue systems cho hệ thống Live Chat, Visitor
+              Tracking, Report, ...</li>
+            <li>Tối ưu hóa database queries, giảm thời gian phản hồi trung bình.</li>
+            <li>Phối hợp với team frontend để tích hợp các component React.js với backend services.</li>
+            <li>Tham gia các buổi báo cáo cho khách hàng về tiến trình và dữa ra quyết định về kiến trúc.</li>
+            <li><strong>Công nghệ chính:</strong> Node.js, Python, MongoDB, Redis, Docker, Kubernetes, Google Cloud,
+              React.js.</li>
+          </ul>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="mb-6">
+          <h3 class="text-lg font-bold">Software Engineer, MEC International, Hà Nội</h3>
+          <p class="text-sm text-gray-600 mb-2">Oct 2018 — Jun 2020</p>
+          <ul class="list-disc ml-6 space-y-1 text-gray-700">
+            <li>Phát triển ứng dụng web ERP cho công ty để quản lý tài nguyên về nhân sự, công việc, dự án xây dựng, vật
+              tư, bảo cao...</li>
+            <li>Xây dựng website cho công ty bằng wordpress.</li>
+            <li><strong>Công nghệ chính:</strong> Laravel, PHP, Docker, MariaDB, Gitlab</li>
+          </ul>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="mb-6">
+          <h3 class="text-lg font-bold">Full Stack Freelancer, Trésor Solution, Hà Nội</h3>
+          <p class="text-sm text-gray-600 mb-2">Jan 2025 — Current</p>
+          <ul class="list-disc ml-6 space-y-1 text-gray-700">
+            <li>Thiết kế kiến trúc hệ thống và cơ sở dữ liệu hoàn chỉnh cho backend services cho hệ thống ERP cho công
+              ty PyPipe Việt Nam, dùng cho quản lý nhân sự, chữ ký số, dự án, đôí tác, dây chuyển sản xuất, khối lượng
+              việc, thống
+              kê...</li>
+            <li>Phát triển các tính năng frontend sử dụng React.js.</li>
+            <li>Deploy ứng dụng production sử dụng Docker trên Ubuntu.</li>
+            <li><strong>Công nghệ:</strong> Node.js / Java, PostgreSQL, React.js, Docker, Ubuntu, Cloudflare.</li>
+          </ul>
+        </div>
+
+        <!-- Personal Projects -->
+        <div class="mb-6">
+          <h3 class="text-lg font-bold">Các dự án cá nhân</h3>
+          <p class="text-gray-700 mb-2">Một vài dự án Freelance khác cũng gồp tối kiếm chứng và áp dụng được các kỹ năng
+            mà mình có vào thiết kế hệ thống và triển khai dự án cho chỉ có một mình:</p>
+          <ul class="list-disc ml-6 space-y-1 text-gray-700">
+            <li>Website đọc truyện tiểu thuyết online.</li>
+            <li>Website quản lý xe, tài xế, công việc cho công ty vận tải.</li>
+            <li>Website wordpress.</li>
+            <li>Nhiều web landing page</li>
+            <li>...</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-3 border-b-2 border-gray-800 pb-2">Education</h2>
+        <div>
+          <h3 class="text-lg font-bold">Cử nhân, Đại học Công nghệ và kinh doanh, Hà Nội</h3>
+          <p class="text-sm text-gray-600">2016 — 2019</p>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-3 border-b-2 border-gray-800 pb-2">Skills</h2>
+        <div class="grid grid-cols-2 gap-x-12 gap-y-4">
+          <div>
+            <div class="mb-3">
+              <p class="font-medium mb-1">Backend Development</p>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 95%"></div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <p class="font-medium mb-1">Database</p>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <p class="font-medium mb-1">Tiếng Anh giao tiếp</p>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 70%"></div>
+              </div>
+            </div>
+            <div>
+              <p class="font-medium mb-1">Tinh chủ động</p>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="mb-3">
+              <p class="font-medium mb-1">Frontend</p>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <p class="font-medium mb-1">DevOps & Infrastructure</p>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 60%"></div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <p class="font-medium mb-1">Làm việc nhóm</p>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 88%"></div>
+              </div>
+            </div>
+            <div>
+              <p class="font-medium mb-1">Ham học hỏi</p>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 95%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Languages -->
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-3 border-b-2 border-gray-800 pb-2">Languages</h2>
+        <div class="max-w-md">
+          <div>
+            <p class="font-medium mb-1">Tiếng Anh</p>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 70%"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hobbies and Interests -->
+      <section>
+        <h2 class="text-2xl font-bold mb-3 border-b-2 border-gray-800 pb-2">Hobbies and Interests</h2>
+        <ul class="list-disc ml-6 space-y-1 text-gray-700">
+          <li>Chơi game</li>
+          <li>Du lịch</li>
+          <li>Tự học thêm các ngôn ngữ lập trình khác</li>
+          <li>Thiết bị điện tử và lập trình những</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function exportToPDF() {
+      window.print();
+    }
+  </script>
+</body>
+
+</html>
