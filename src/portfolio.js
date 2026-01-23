@@ -27,6 +27,7 @@ const greeting = {
   ),
   resumeLink:
     "true", // Set to empty to hide the button
+  resumeDownloadName: "Luu Viet Hai CV - 2026.pdf",
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
