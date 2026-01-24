@@ -23,7 +23,7 @@ const greeting = {
   username: "Hai Luu",
   title: "Hi all, I'm Hải",
   subTitle: emoji(
-    "A passionate Full Stack Software Developer 🚀 having an experience of building Web applications with Typescript / JavaScript / Reactjs / Nodejs / Python and some other cool libraries and frameworks."
+    "A passionate Full Stack Software Engineer 🚀 having an experience of building Web applications with Typescript / Nodejs / Python / Reactjs and some other cool libraries and frameworks."
   ),
   resumeLink:
     "true", // Set to empty to hide the button
@@ -201,7 +201,7 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
-      role: "Full Stack Developer",
+      role: "Full Stack Engineer",
       company: "Tresor Solutions",
       companylogo: require("./assets/images/tresor-logo.jpeg"),
       date: "Jan 2025 – Present",
@@ -212,14 +212,14 @@ const workExperiences = {
       company: "Breadstack Technologies Inc",
       companylogo: require("./assets/images/breadstack-logo.jpeg"),
       date: "Jun 2022 – Jan 2026",
-      desc: "Node.js backend developer and help built Live chat system with many unique features like Customer management, Order management, Coupon sending, Visitor realtime tracking, Ticket System, Email Marketing, etc. The system needs to be scalable and efficient, so I have to learn a lot about the system and the technologies used in the project. This is also where I became a Technical Lead for the project, bring the team together and help them grow."
+      desc: "Node.js backend engineer and help built Live chat system with many unique features like Customer management, Order management, Coupon sending, Visitor realtime tracking, Ticket System, Email Marketing, etc. The system needs to be scalable and efficient, so I have to learn a lot about the system and the technologies used in the project. This is also where I became a Technical Lead for the project, bring the team together and help them grow."
     },
     {
-      role: "Python Backend Developer",
+      role: "Python Backend Engineer",
       company: "Advesa Digital Solutions",
       companylogo: require("./assets/images/advesa-logo.jpeg"),
       date: "May 2020 – Feb 2022",
-      desc: "Joined as Python backend developer and built APIs and Queues system for one of the company's product called 'Delivery App'. At this company, I truely started to becomes a more mature developer with knowledge of backend development and system design, Queue system, API design, Caching, Git, CI/CD, etc. Also where I learned to work in a team and collaborate with other developers, Agile development, etc."
+      desc: "Joined as Python backend engineer and built APIs and Queues system for one of the company's product called 'Delivery App'. At this company, I truely started to becomes a more mature engineer with knowledge of backend development and system design, Queue system, API design, Caching, Git, CI/CD, etc. Also where I learned to work in a team and collaborate with other engineers, Agile development, etc."
     },
     {
       role: "Software Engineer Intern",
@@ -323,7 +323,7 @@ const achievementSection = {
     },
 
     {
-      title: "PWA Web App Developer",
+      title: "PWA Web App Engineer",
       subtitle: "Completed Certifcation from SMIT for PWA Web App Development",
       image: require("./assets/images/pwaLogo.webp"),
       imageAlt: "PWA Logo",
